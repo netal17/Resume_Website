@@ -43,15 +43,26 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await portfolioService.submitContact(formData);
+      
       toast({
         title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        description: response.message || "Thank you for reaching out. I'll get back to you soon.",
       });
+      
+      // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' });
+      
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
