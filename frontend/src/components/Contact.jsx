@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
-import { portfolioData } from '../data/mock';
+import { portfolioService } from '../services/api';
 import { Mail, Linkedin, Github, MapPin, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
 
