@@ -102,7 +102,7 @@
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
 
-user_problem_statement: "Test the portfolio backend APIs to ensure they're working correctly"
+user_problem_statement: "Run comprehensive automated frontend testing for Netal Daga's portfolio website"
 
 backend:
   - task: "Root API Endpoint"
@@ -226,7 +226,113 @@ backend:
         comment: "✅ Database integration working correctly. MongoDB connection established, data properly seeded via seed_data.py, and all endpoints successfully fetch/store data from database collections."
 
 frontend:
-  # Frontend testing not performed as per instructions
+  - task: "Page Load & Performance"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Initial page load and API data loading needs testing. All sections should render properly with loading states."
+
+  - task: "Header Navigation"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Header.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Navigation functionality, mobile menu, and social links need testing."
+
+  - task: "Hero Section"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Hero.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Profile image, personal info display, and CTA buttons need testing."
+
+  - task: "Skills Section"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Skills.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Skills categories loading from API and hover effects need testing."
+
+  - task: "Experience Section"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Experience.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Project experiences loading from API and responsive layout need testing."
+
+  - task: "Projects Section"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Projects.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Project filtering functionality and hover effects need testing."
+
+  - task: "Contact Form"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/components/Contact.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Form submission, validation, and success/error handling need testing."
+
+  - task: "Responsive Design"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/App.js"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Mobile, tablet, and desktop layouts need testing across different viewport sizes."
+
+  - task: "API Integration"
+    implemented: true
+    working: "NA"
+    file: "frontend/src/services/api.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: "NA"
+        agent: "main"
+        comment: "Frontend API calls, error handling, and loading states need testing."
 
 metadata:
   created_by: "testing_agent"
