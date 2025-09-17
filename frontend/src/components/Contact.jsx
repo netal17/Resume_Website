@@ -91,64 +91,68 @@ const Contact = () => {
 
               {/* Contact Methods */}
               <div className="space-y-6">
-                <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="bg-blue-600 p-3 rounded-full">
-                    <Mail className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-800">Email</div>
-                    <a 
-                      href={`mailto:${portfolioData.personal.email}`}
-                      className="text-blue-600 hover:text-blue-700 transition-colors"
-                    >
-                      {portfolioData.personal.email}
-                    </a>
-                  </div>
-                </div>
+                {personalInfo && (
+                  <>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
+                      <div className="bg-blue-600 p-3 rounded-full">
+                        <Mail className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-slate-800">Email</div>
+                        <a 
+                          href={`mailto:${personalInfo.email}`}
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                        >
+                          {personalInfo.email}
+                        </a>
+                      </div>
+                    </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="bg-blue-600 p-3 rounded-full">
-                    <Linkedin className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-800">LinkedIn</div>
-                    <a 
-                      href={portfolioData.personal.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 transition-colors"
-                    >
-                      Connect with me
-                    </a>
-                  </div>
-                </div>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
+                      <div className="bg-blue-600 p-3 rounded-full">
+                        <Linkedin className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-slate-800">LinkedIn</div>
+                        <a 
+                          href={personalInfo.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                        >
+                          Connect with me
+                        </a>
+                      </div>
+                    </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="bg-slate-600 p-3 rounded-full">
-                    <Github className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-800">GitHub</div>
-                    <a 
-                      href={portfolioData.personal.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 transition-colors"
-                    >
-                      View my repositories
-                    </a>
-                  </div>
-                </div>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
+                      <div className="bg-slate-600 p-3 rounded-full">
+                        <Github className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-slate-800">GitHub</div>
+                        <a 
+                          href={personalInfo.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                        >
+                          View my repositories
+                        </a>
+                      </div>
+                    </div>
 
-                <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="bg-green-600 p-3 rounded-full">
-                    <MapPin className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-slate-800">Location</div>
-                    <div className="text-slate-600">{portfolioData.personal.location}</div>
-                  </div>
-                </div>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-50 rounded-lg">
+                      <div className="bg-green-600 p-3 rounded-full">
+                        <MapPin className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-slate-800">Location</div>
+                        <div className="text-slate-600">{personalInfo.location}</div>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Quick Stats */}
