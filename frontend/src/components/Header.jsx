@@ -169,30 +169,32 @@ const Header = () => {
               </button>
               
               {/* Mobile Social Links */}
-              <div className="flex items-center space-x-4 pt-4">
-                <a 
-                  href={portfolioData.personal.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-600 hover:text-blue-600 transition-colors"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a 
-                  href={portfolioData.personal.github} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-600 hover:text-slate-800 transition-colors"
-                >
-                  <Github size={20} />
-                </a>
-                <a 
-                  href={`mailto:${portfolioData.personal.email}`}
-                  className="text-slate-600 hover:text-blue-600 transition-colors"
-                >
-                  <Mail size={20} />
-                </a>
-              </div>
+              {personalInfo && (
+                <div className="flex items-center space-x-4 pt-4">
+                  <a 
+                    href={personalInfo.linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-blue-600 transition-colors"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                  <a 
+                    href={personalInfo.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-600 hover:text-slate-800 transition-colors"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a 
+                    href={`mailto:${personalInfo.email}`}
+                    className="text-slate-600 hover:text-blue-600 transition-colors"
+                  >
+                    <Mail size={20} />
+                  </a>
+                </div>
+              )}
             </nav>
           </div>
         )}
