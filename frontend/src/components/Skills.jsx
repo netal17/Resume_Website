@@ -1,0 +1,104 @@
+import React from 'react';
+import { Card, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
+import { portfolioData } from '../data/mock';
+import { Brain, Database, Cloud, Code, Zap } from 'lucide-react';
+
+const Skills = () => {
+  const skillCategories = [
+    {
+      title: "Computer Vision & NLP",
+      icon: Brain,
+      color: "bg-purple-100 text-purple-600",
+      skills: portfolioData.skills["Computer Vision & NLP"]
+    },
+    {
+      title: "Data & Processing",
+      icon: Database,
+      color: "bg-green-100 text-green-600",
+      skills: portfolioData.skills["Data & Processing"]
+    },
+    {
+      title: "Deployment & DevOps",
+      icon: Cloud,
+      color: "bg-blue-100 text-blue-600",
+      skills: portfolioData.skills["Deployment & DevOps"]
+    },
+    {
+      title: "Backend & APIs",
+      icon: Code,
+      color: "bg-orange-100 text-orange-600",
+      skills: portfolioData.skills["Backend & APIs"]
+    },
+    {
+      title: "Automation & Tools",
+      icon: Zap,
+      color: "bg-red-100 text-red-600",
+      skills: portfolioData.skills["Automation & Tools"]
+    }
+  ];
+
+  return (
+    <section id="skills" className="py-20 bg-slate-50">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Technical Skills</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              A comprehensive toolkit for building intelligent AI/ML solutions
+            </p>
+          </div>
+
+          {/* Skills Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => {
+              const IconComponent = category.icon;
+              return (
+                <Card key={index} className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className={`p-3 rounded-full ${category.color} mr-4`}>
+                        <IconComponent className="h-6 w-6" />
+                      </div>
+                      <h3 className="font-semibold text-slate-800 text-lg">
+                        {category.title}
+                      </h3>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge 
+                          key={skillIndex}
+                          variant="secondary"
+                          className="bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors cursor-default"
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-16 text-center">
+            <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 text-white">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Always Learning</h3>
+                <p className="text-lg opacity-90 max-w-2xl mx-auto">
+                  I'm constantly exploring new technologies and methodologies in AI/ML. 
+                  Currently focusing on advanced computer vision techniques and scalable deployment strategies.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
