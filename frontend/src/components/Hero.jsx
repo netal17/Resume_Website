@@ -46,8 +46,8 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="mb-8">
             <img
-              src={portfolioData.personal.image}
-              alt={portfolioData.personal.name}
+              src={personalInfo?.image || '/placeholder-avatar.jpg'}
+              alt={personalInfo?.name || 'Profile'}
               className="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg object-cover"
             />
           </div>
@@ -55,25 +55,25 @@ const Hero = () => {
           {/* Main Content */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-800 leading-tight">
-              {portfolioData.personal.name}
+              {personalInfo?.name || 'Loading...'}
             </h1>
             
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3xl font-semibold text-blue-600">
-                {portfolioData.personal.title}
+                {personalInfo?.title || ''}
               </h2>
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                {portfolioData.personal.subtitle}
+                {personalInfo?.subtitle || ''}
               </p>
             </div>
 
             <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              {portfolioData.personal.bio}
+              {personalInfo?.bio || ''}
             </p>
 
             {/* Location */}
             <p className="text-slate-500">
-              📍 {portfolioData.personal.location}
+              📍 {personalInfo?.location || ''}
             </p>
 
             {/* CTA Buttons */}
