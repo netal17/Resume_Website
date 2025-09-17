@@ -70,7 +70,7 @@ const Skills = () => {
                         <IconComponent className="h-6 w-6" />
                       </div>
                       <h3 className="font-semibold text-slate-800 text-lg">
-                        {category.title}
+                        {category.category}
                       </h3>
                     </div>
                     
