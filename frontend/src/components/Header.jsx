@@ -6,6 +6,7 @@ import { portfolioService } from '../services/api';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [personalInfo, setPersonalInfo] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,19 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Fetch personal info for social links
+  useEffect(() => {
+    const fetchPersonalInfo = async () => {
+      try {
+        const data = await portfolioService.getPersonalInfo();
+        setPersonalInfo(data);
+      } catch (error) {
+        console.error('Error fetching personal info:', error);
+      }
+    };
+    fetchPersonalInfo();
   }, []);
 
   const scrollToSection = (sectionId) => {
