@@ -5,38 +5,46 @@ import { portfolioService } from '../services/api';
 import { Brain, Database, Cloud, Code, Zap } from 'lucide-react';
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Computer Vision & NLP",
-      icon: Brain,
-      color: "bg-purple-100 text-purple-600",
-      skills: portfolioData.skills["Computer Vision & NLP"]
-    },
-    {
-      title: "Data & Processing",
-      icon: Database,
-      color: "bg-green-100 text-green-600",
-      skills: portfolioData.skills["Data & Processing"]
-    },
-    {
-      title: "Deployment & DevOps",
-      icon: Cloud,
-      color: "bg-blue-100 text-blue-600",
-      skills: portfolioData.skills["Deployment & DevOps"]
-    },
-    {
-      title: "Backend & APIs",
-      icon: Code,
-      color: "bg-orange-100 text-orange-600",
-      skills: portfolioData.skills["Backend & APIs"]
-    },
-    {
-      title: "Automation & Tools",
-      icon: Zap,
-      color: "bg-red-100 text-red-600",
-      skills: portfolioData.skills["Automation & Tools"]
-    }
-  ];
+  const [skillCategories, setSkillCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const iconMap = {
+    Brain,
+    Database,
+    Cloud,
+    Code,
+    Zap
+  };
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      try {
+        const skills = await portfolioService.getSkills();
+        const categoriesWithIcons = skills.map(skill => ({
+          ...skill,
+          icon: iconMap[skill.icon] || Brain
+        }));
+        setSkillCategories(categoriesWithIcons);
+      } catch (error) {
+        console.error('Error fetching skills:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchSkills();
+  }, []);
+
+  if (loading) {
+    return (
+      <section id="skills" className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="skills" className="py-20 bg-slate-50">
