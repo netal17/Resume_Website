@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { portfolioService } from '../services/api';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
