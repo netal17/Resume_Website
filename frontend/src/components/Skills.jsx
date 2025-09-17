@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mock';
+import { portfolioService } from '../services/api';
 import { Brain, Database, Cloud, Code, Zap } from 'lucide-react';
 
 const Skills = () => {
