@@ -9,6 +9,7 @@ import { Mail, Linkedin, Github, MapPin, Send, CheckCircle } from 'lucide-react'
 import { useToast } from '../hooks/use-toast';
 
 const Contact = () => {
+  const [personalInfo, setPersonalInfo] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +18,18 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const fetchPersonalInfo = async () => {
+      try {
+        const data = await portfolioService.getPersonalInfo();
+        setPersonalInfo(data);
+      } catch (error) {
+        console.error('Error fetching personal info:', error);
+      }
+    };
+    fetchPersonalInfo();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
