@@ -4,12 +4,12 @@ export const portfolioData = {
     name: "Netal Daga",
     title: "AI/ML Developer",
     subtitle: "Computer Vision, Backend Engineering & Intelligent Automation",
-    email: "netal.daga@example.com", // This will be updated with real email
+    email: "npsdaga@gmail.com",
     linkedin: "https://www.linkedin.com/in/netal-daga/",
     github: "https://github.com/netaldaga", // Placeholder
     location: "Pune, India",
     bio: "AI/ML Developer specializing in Computer Vision, Backend Engineering, and Intelligent Automation. Passionate about building intelligent systems that solve real-world problems with measurable impact.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    image: "https://customer-assets.emergentagent.com/job_cv-portfolio-19/artifacts/496r75cd_NetalDaga.jpeg"
   },
   
   skills: {
