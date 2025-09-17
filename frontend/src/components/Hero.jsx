@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui/button';
 import { ArrowDown, Download, ExternalLink } from 'lucide-react';
-import { portfolioData } from '../data/mock';
+import { portfolioService } from '../services/api';
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
